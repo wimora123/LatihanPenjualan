@@ -1,0 +1,17 @@
+//Jangan lupa kelola stok di sql dengan cara:
+1.ke localhost phpmyadmin
+2. Klik trigger di atas kanan phpmyadmin
+3. Tambahkan trigger
+4. Set nama trigger
+5. Tabel: tbl_pesanan
+6. Waktu: after
+7. Kejadian: INSERT
+8. Kode
+
+
+BEGIN
+	UPDATE tbl_barang SET stok = stok-NEW.jumlah
+	WHERE id_brg = NEW.id_brg
+END
+
+9. Definer: root@localhost
